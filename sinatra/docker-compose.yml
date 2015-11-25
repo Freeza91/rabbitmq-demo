@@ -1,0 +1,17 @@
+web:
+  build: .
+  command: thin start
+  volumes:
+    - .:/consumer
+  ports:
+    - "9000:3000"
+  links:
+    - redis
+    - message
+
+message:
+  image: rabbitmq
+  # ports: consumer don't need, producter has built
+    # - "8001:15672"
+redis:
+  image: redis

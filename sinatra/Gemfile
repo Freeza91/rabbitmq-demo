@@ -1,0 +1,19 @@
+source 'https://ruby.taobao.org'
+
+gem 'rake'
+gem 'sinatra'
+gem 'sinatra-contrib'
+
+# gem 'sinatra-activerecord'
+
+gem 'racksh'
+gem 'thin'
+
+gem 'bunny'
+gem 'sneakers'
+gem 'json'
+gem 'redis'
+
+group :development do
+  gem 'shotgun'
+end

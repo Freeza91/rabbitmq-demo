@@ -1,2 +1,3 @@
 /rails/tmp/*
 /sinatra/tmp/*
+/sinatra/app/assets/.*

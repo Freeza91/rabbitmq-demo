@@ -1,0 +1,11 @@
+development:
+  foo: development
+  bar: bar
+  secret: heehehehe
+test:
+  foo: test
+  bar: bar
+production:
+  foo: production
+  bar: bar
+  secret: hshshsh

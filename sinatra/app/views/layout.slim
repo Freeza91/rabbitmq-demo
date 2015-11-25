@@ -1,0 +1,11 @@
+doctype html
+html lang=session[:locale]
+  head
+    title 极客实验室
+    == stylesheet_tag 'app'
+    / == javascript_tag 'app'
+    == javascript_tag 'app', expand: true
+  body
+    h1 hello
+    .container
+      == yield

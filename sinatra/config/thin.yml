@@ -1,0 +1,15 @@
+---
+user: deploy
+group: root
+timeout: 30
+wait: 30
+max_conns: 1024
+require: []
+environment: production
+max_persistent_conns: 512
+servers: 1
+threaded: true
+no-epoll: true
+daemonize: true
+# chdir: /path/to/your/apps/root
+# tag: a-name-to-show-up-in-ps aux
