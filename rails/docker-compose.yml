@@ -1,0 +1,19 @@
+web:
+  build: .
+  command: rails s -b 0.0.0.0
+  volumes:
+    - .:/producter
+  ports:
+    - "8000:3000"
+  links:
+    - message
+    - db
+
+message:
+  image: rabbitmq
+  ports:
+    - "8001:15672"
+db:
+  image: mysql
+  environment:
+    - MYSQL_ROOT_PASSWORD=root

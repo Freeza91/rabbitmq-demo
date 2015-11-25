@@ -1,0 +1,19 @@
+default: &default
+  adapter: mysql2
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  host: db
+  username: root
+  password: root
+  # database: producter_dev
+
+test:
+  <<: *default
+  # database: producter_test
+
+production:
+  <<: *default
+  # database: producter_pro
