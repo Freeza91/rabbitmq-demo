@@ -1,6 +1,7 @@
 opts = {
-  amqp: "amqp://guest:guest@rails_message_1:5672",
+  amqp: "amqp://guest:guest@message:5672",
   vhost: "/"
 }
 
 Sneakers.configure(opts)
+Sneakers.logger.level = Logger::INFO

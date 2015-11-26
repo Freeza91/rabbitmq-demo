@@ -1,5 +1,6 @@
 web:
   build: .
+  container_name: consumer
   command: thin start
   command: rake sneakers:run
   volumes:
@@ -9,7 +10,8 @@ web:
   links:
     - redis
   external_links:
-    - rails_message_1
+    - message
 
 redis:
   image: redis
+  container_name: consumer_redis

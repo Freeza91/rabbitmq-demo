@@ -1,19 +1,23 @@
 web:
   build: .
+  container_name: producter
   command: rails s -b 0.0.0.0
   volumes:
     - .:/producter
   ports:
     - "8000:3000"
   links:
-    - message
     - db
+  external_links:
+    - message
 
 message:
   image: rabbitmq
+  container_name: message
   ports:
     - "15672:15672"
 db:
   image: mysql
+  container_name: db
   environment:
     - MYSQL_ROOT_PASSWORD=root
