@@ -1,17 +1,15 @@
 web:
   build: .
   command: thin start
+  command: rake sneakers:run
   volumes:
     - .:/consumer
   ports:
     - "9000:3000"
   links:
     - redis
-    - message
+  external_links:
+    - rails_message_1
 
-message:
-  image: rabbitmq
-  # ports: consumer don't need, producter has built
-    # - "8001:15672"
 redis:
   image: redis

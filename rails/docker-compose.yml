@@ -12,7 +12,7 @@ web:
 message:
   image: rabbitmq
   ports:
-    - "8001:15672"
+    - "15672:15672"
 db:
   image: mysql
   environment:
