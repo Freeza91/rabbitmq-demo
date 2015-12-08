@@ -1,0 +1,42 @@
+web2:
+  build: ./rails
+  container_name: producter
+  command: rails s -b 0.0.0.0
+  volumes:
+    - ./rails:/producter
+  ports:
+    - "8000:3000"
+  links:
+    - db
+  external_links:
+    - message
+
+message:
+  image: rabbitmq
+  container_name: message
+  ports:
+    - "15672:15672"
+
+db:
+  image: mysql
+  container_name: db
+  environment:
+    - MYSQL_ROOT_PASSWORD=root
+
+web1:
+  build: ./sinatra/Dockerfile
+  container_name: consumer
+  command: thin start
+  # command: rake sneakers:run
+  volumes:
+    - ./sinatra:/consumer
+  ports:
+    - "9000:3000"
+  links:
+    - redis
+  external_links:
+    - message
+
+redis:
+  image: redis
+  container_name: consumer_redis
